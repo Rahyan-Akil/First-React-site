@@ -1,11 +1,19 @@
 import './App.css';
-
+const nayoks =["rubel","sakib","sharuk","salman","ananta"];
 function App() {
   return (
     <div className="App">
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
+      {
+        nayoks.map(nayok=> <li>Nayok-{nayok}</li>)
+      }
+      {
+        nayoks.map(nayok => <Person name={nayok}></Person>)
+      }
+      
+      {/* <Person name={nayoks[0]}></Person>
+      <Person name={nayoks[1]}></Person>
+      <Person name={nayoks[2]}></Person> */}
+
       <h3>Here we have next similar in look different in data.</h3>
       <Employee></Employee>
       <Employee></Employee>
@@ -15,10 +23,10 @@ function App() {
 }
 
 
-function Person(){
+function Person(props){
   return(
     <div className='profile'>
-      <h1>Rahyan Shamsi</h1>
+      <h1>{props.name}</h1>
       <p>Junior Front-End Dev</p>
     </div>
   );
